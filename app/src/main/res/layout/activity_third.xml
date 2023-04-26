@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+<variable
+    name="yl"
+    type="String" />
+        <variable
+            name="fs"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/ylc"
+                android:layout_width="0dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="2"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:src="@drawable/ylx"
+                        android:layout_weight="1"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textSize="45sp"
+                        android:textColor="#fff"
+                        android:layout_weight="1.5"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="24小时\n累计\n雨量" />
+                </LinearLayout>
+                <TextView
+                    android:textSize="47sp"
+                    android:textColor="#fff"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:text="@{yl}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/ylcs"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <com.github.mikephil.charting.charts.LineChart
+
+                    android:gravity="bottom"
+                    android:id="@+id/ylchart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/fsc"
+                android:layout_marginRight="10dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                   android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0px"
+                    android:layout_weight="2"
+                    android:gravity="center">
+                    <ImageView
+                        android:src="@drawable/fsx"
+                        android:layout_weight="1"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textSize="45sp"
+                        android:textColor="#fff"
+                        android:layout_weight="1.5"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="风速" />
+                </LinearLayout>
+                <TextView
+                    android:textSize="47sp"
+                    android:textColor="#fff"
+                    android:id="@+id/columnar_wendu"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:text="@{fs}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/fscs"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <com.github.mikephil.charting.charts.LineChart
+
+                    android:id="@+id/fschart"
+                    android:gravity="bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

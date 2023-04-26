@@ -1,0 +1,380 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="seven"
+            type="com.kd.appweather.SevenWea" />
+        <variable
+            name="imag1"
+            type="String" />
+        <variable
+            name="imag2"
+            type="String" />
+        <variable
+            name="imag3"
+            type="String" />
+        <variable
+            name="imag4"
+            type="String" />
+        <variable
+            name="imag5"
+            type="String" />
+        <variable
+            name="imag6"
+            type="String" />
+        <variable
+            name="imag7"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{seven.txt1_date}"
+                android:textColor="#fff"
+                android:textSize="@dimen/dateSize" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/t1"
+                setBar="@{}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="4.5" />
+
+            <ImageView
+
+                android:id="@+id/image1"
+                setImage="@{imag1}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="@dimen/weainfoSize"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{seven.txt2_date}"
+                android:textColor="#fff"
+                android:textSize="@dimen/dateSize"
+                />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/t2"
+                setBar="@{}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="4.5"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/image2"
+                setImage="@{imag2}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="@dimen/weainfoSize"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{seven.txt3_date}"
+                android:textColor="#fff"
+                android:textSize="@dimen/dateSize"
+                 />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/t3"
+                setBar="@{}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="4.5"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/image3"
+                setImage="@{imag3}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="@dimen/weainfoSize"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{seven.txt4_date}"
+                android:textColor="#fff"
+                android:textSize="@dimen/dateSize"
+                 />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/t4"
+                setBar="@{}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="4.5"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/image4"
+                setImage="@{imag4}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="@dimen/weainfoSize"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{seven.txt5_date}"
+                android:textColor="#fff"
+                android:textSize="@dimen/dateSize"
+                />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/t5"
+                setBar="@{}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="4.5"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/image5"
+                setImage="@{imag5}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="@dimen/weainfoSize"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{seven.txt6_date}"
+                android:textColor="#fff"
+                android:textSize="@dimen/dateSize"
+                 />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/t6"
+                setBar="@{}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="4.5"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/image6"
+                setImage="@{imag6}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="@dimen/weainfoSize"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{seven.txt7_date}"
+                android:textColor="#fff"
+                android:textSize="@dimen/dateSize"
+                 />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/t7"
+                setBar="@{}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="4.5"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/image7"
+                setImage="@{imag7}"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="@dimen/weainfoSize"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical" />
+    </LinearLayout>
+</layout>
