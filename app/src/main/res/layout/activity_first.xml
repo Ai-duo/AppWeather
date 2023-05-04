@@ -24,7 +24,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_marginRight="35px"
+                android:layout_marginRight="18px"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -81,7 +81,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginRight="35px"
+                android:layout_marginRight="18px"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -93,6 +93,7 @@
                     android:layout_weight="0.3"
                     android:gravity="center"
                     />
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="0px"
@@ -137,7 +138,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginRight="35px"
+                android:layout_marginRight="18px"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -193,7 +194,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginRight="35px"
+                android:layout_marginRight="18px"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -231,7 +232,7 @@
                     android:gravity="center"
                     android:textColor="#ff0"
                     setFl="@{elements.wea_fengsu}"
-                    android:textSize="40sp" />
+                    android:textSize="17sp" />
                 <TextView
                     android:textColor="#fff"
                     android:layout_width="match_parent"
@@ -239,7 +240,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:text="@{elements.wea_fengsu+`\n`}"
-                    android:textSize="@dimen/firstpageindexsize"/>
+                    android:textSize="17sp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0px"
@@ -249,7 +250,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginRight="35px"
+                android:layout_marginRight="18px"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -292,9 +293,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0px"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="center_horizontal"
                     android:text="@{elements.wea_fengxiang+`\n`}"
-                    android:textSize="35sp"
+                    android:textSize="14sp"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -343,14 +344,16 @@
                     android:gravity="center"
 
                     android:textSize="@dimen/firstpageindexsize" />
+
                 <TextView
-                    android:textColor="#fff"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:text="@{elements.wea_qiya+`\n`}"
-                    android:textSize="40sp"/>
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0px"

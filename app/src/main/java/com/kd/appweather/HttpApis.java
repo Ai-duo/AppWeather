@@ -7,7 +7,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Url;
 
 public interface HttpApis {
-    @GET("getnewzdzhourdata/58549")
+    @GET("getnewzdzhourdata/P7723")
     Call<ResponseBody> getElements();
 
     @GET("get7dayybdata/54901")
@@ -29,5 +29,9 @@ public interface HttpApis {
     Call<ResponseBody> getYl();
     @GET("getzdz12hourdata/58549/wea_fengsu")
     Call<ResponseBody> getFs();
+    @GET("getdayybdata/{id}")
+    Call<ResponseBody> getWeather(@Path("id") String id);
 
+    @GET("getqxo2data/57962")
+    Call<ResponseBody> getOxy();
 }

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.kd.appweather.beans.Elements;
 import com.kd.appweather.beans.FengSu;
 import com.kd.appweather.beans.JsonMapper;
+import com.kd.appweather.beans.Oxy;
 import com.kd.appweather.beans.ShiDu;
 import com.kd.appweather.beans.Wea;
 import com.kd.appweather.beans.WenDu;
@@ -27,8 +28,8 @@ public class DataModel {
     private Retrofit retrofit,download;
     private HttpApis apis,dapis;
     private DataModel() {
-        retrofit = new Retrofit.Builder().baseUrl("http://61.153.246.242:8888/qxdata/QxService.svc/").build();
-        download = new Retrofit.Builder().baseUrl("http://115.220.4.68:8081/qxdata/").build();
+        retrofit = new Retrofit.Builder().baseUrl("http://61.153.246.242:8888/qxdata/QxService.svc/").build();//61.153.246.242:8888
+        download = new Retrofit.Builder().baseUrl("http://115.220.4.68:8081/qxdata/QxService.svc/").build();
         apis = retrofit.create(HttpApis.class);
         dapis = download.create(HttpApis.class);
     }
@@ -49,7 +50,7 @@ public class DataModel {
     public Elements getSixELements(){
         String s = null;
         try {
-            Response<ResponseBody> execute = apis.getElements().execute();
+            Response<ResponseBody> execute = dapis.getElements().execute();
             if(execute.isSuccessful()&&execute.code()==200){
                s =  execute.body().string();
                 Log.i("TAG","Elements"+s);
@@ -190,7 +191,7 @@ public class DataModel {
     public String getWea(){
         String s = null;
         try {
-            Response<ResponseBody> execute = apis.getWeather().execute();
+            Response<ResponseBody> execute = dapis.getWeather("57962").execute();
             if(execute.isSuccessful()&&execute.code()==200){
                 s =  execute.body().string();
                 Log.i("TAG","wea:"+s);
@@ -206,6 +207,26 @@ public class DataModel {
         return s;
 
     }
+    public Oxy getOxy(){
+        String s = null;
+        try {
+            Response<ResponseBody> execute = dapis.getOxy().execute();
+            if(execute.isSuccessful()&&execute.code()==200){
+                s =  execute.body().string();
+                Log.i("TAG","wea:"+s);
+                if(!TextUtils.isEmpty(s)&&s.length()>10){
+                    Oxy oxy = JsonMapper.getInstance().readValue(s, Oxy.class);
+                    return oxy;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
+    }
+
     public String getTime(){
         return null;
     }

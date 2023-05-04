@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModel;
 import com.kd.appweather.beans.Elements;
 import com.kd.appweather.beans.FengSu;
 import com.kd.appweather.beans.Lunar;
+import com.kd.appweather.beans.Oxy;
 import com.kd.appweather.beans.ShiDu;
 import com.kd.appweather.beans.WenDu;
 import com.kd.appweather.beans.YuLiang;
@@ -18,11 +19,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class ViewModelData extends ViewModel {
-     private MutableLiveData<String> time = new MutableLiveData<>();
+    private MutableLiveData<String> time = new MutableLiveData<>();
+     private MutableLiveData<Oxy> oxy = new MutableLiveData<>();
     private MutableLiveData<String> wea = new MutableLiveData<>();
     private MutableLiveData<SevenWea> seven = new MutableLiveData<>();
     private MutableLiveData<List<WenDu>> wd1 = new MutableLiveData<>();
@@ -31,6 +34,10 @@ public class ViewModelData extends ViewModel {
     private MutableLiveData<List<YuLiang>> yl1 = new MutableLiveData<>();
     private MutableLiveData<Elements> element = new MutableLiveData<>();
     private MutableLiveData<Boolean> dyl = new MutableLiveData<>();
+
+    public MutableLiveData<Oxy> getOxy() {
+        return oxy;
+    }
 
     public MutableLiveData<String> getWea() {
         return wea;
@@ -79,7 +86,7 @@ public class ViewModelData extends ViewModel {
         return flag;
     }
     public TimerTask dates;
-    final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年M月dd日 HH:mm");
+    final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年M月dd日 E HH:mm", Locale.CHINA);
     private Timer timer,netTimer,timer1;
     public void initTask() {
         dates = new TimerTask() {
@@ -103,14 +110,15 @@ public class ViewModelData extends ViewModel {
                 seven.postValue(DataModel.getInstance().getSevenWea());
                 wea.postValue(DataModel.getInstance().getWea());
                 element.postValue(DataModel.getInstance().getSixELements());
-                wd1.postValue(DataModel.getInstance().get12Wd());
-                sd1.postValue(DataModel.getInstance().get12Shd());
-                fs1.postValue(DataModel.getInstance().get12Fs());
-                yl1.postValue(DataModel.getInstance().get12Yl());
+                oxy.postValue(DataModel.getInstance().getOxy());
+              //  wd1.postValue(DataModel.getInstance().get12Wd());
+              //  sd1.postValue(DataModel.getInstance().get12Shd());
+               // fs1.postValue(DataModel.getInstance().get12Fs());
+               // yl1.postValue(DataModel.getInstance().get12Yl());
             }
         }, 0, 5 * 60 * 1000);
 
-        timer1 = new Timer();
+      /*  timer1 = new Timer();
         timer1.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -120,7 +128,7 @@ public class ViewModelData extends ViewModel {
                 }
                 dyl.postValue(true);
             }
-        }, 0, 5 * 60 * 1000);
+        }, 0, 5 * 60 * 1000);*/
     }
 
 }

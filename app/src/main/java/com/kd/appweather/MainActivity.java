@@ -11,6 +11,7 @@ import android.util.Log;
 
 import com.kd.appweather.beans.Elements;
 import com.kd.appweather.beans.FengSu;
+import com.kd.appweather.beans.Oxy;
 import com.kd.appweather.beans.ShiDu;
 import com.kd.appweather.beans.WenDu;
 import com.kd.appweather.beans.YuLiang;
@@ -18,6 +19,7 @@ import com.kd.appweather.databinding.ActivityMainBinding;
 import com.kd.appweather.fragments.FragmentFifth;
 import com.kd.appweather.fragments.FragmentFirst;
 import com.kd.appweather.fragments.FragmentFour;
+import com.kd.appweather.fragments.FragmentOxy;
 import com.kd.appweather.fragments.FragmentSecond;
 import com.kd.appweather.fragments.FragmentSix;
 import com.kd.appweather.fragments.FragmentThird;
@@ -35,33 +37,40 @@ public class MainActivity extends AppCompatActivity {
     FragmentFifth fifth;
     FragmentSix six;
     FragmentThird third;
+    FragmentOxy oxy;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
+        mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         vmd = ViewModelProviders.of(this).get(ViewModelData.class);
         initObserver();
         vmd.initTask();
         initFragment();
         vmd.getNetInfo();
     }
+
     private Timer timer;
     int index = 0;
-    private void initFragment(){
+
+    private void initFragment() {
+        oxy = new FragmentOxy();
         first = new FragmentFirst();
         second = new FragmentSecond();
         third = new FragmentThird();
         four = new FragmentFour();
         fifth = new FragmentFifth();
         six = new FragmentSix();
-        timer  = new Timer();
-
+        timer = new Timer();
+       /* final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.contenter, first).commit();
+        mainBinding.setBackIndex(0);*/
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                if(index==6000)index = 0;
+                if(index==2000)index = 0;
                 final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                switch (index%6){
+                switch (index%2){
                     case 0:
                         transaction.replace(R.id.contenter,first).commit();
                         mainBinding.setBackIndex(0);
@@ -70,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
                         mainBinding.setIsshow(true);
                         break;
                     case 1:
+                        transaction.replace(R.id.contenter,oxy).commit();
+                        mainBinding.setBackIndex(1);
+                        mainBinding.setTitle("");
+                        mainBinding.setIsshow(false);
+                        break;
+                   /* case 1:
                         transaction.replace(R.id.contenter,second).commit();
                         mainBinding.setBackIndex(1);
                         mainBinding.setTitle("");
@@ -93,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                     case 5:
                         transaction.replace(R.id.contenter,six).commit();
                         mainBinding.setUpdate("云图");
-                        break;
+                        break;*/
                 }
                index++;
 
@@ -101,8 +116,10 @@ public class MainActivity extends AppCompatActivity {
         }, 0, 15 * 1000);
 
     }
+
     String update = "";
-    public void initObserver(){
+
+    public void initObserver() {
         vmd.getTimeLiveData().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
@@ -112,26 +129,26 @@ public class MainActivity extends AppCompatActivity {
         vmd.getElement().observe(this, new Observer<Elements>() {
             @Override
             public void onChanged(Elements s) {
-                update = s.updatetime;
-              first.update(s);
-              second.updateSd(s.wea_shidu);
-              second.updateWd(s.wea_wendu);
-              third.updateYl(s.wea_yuliang);
-              third.updateFs(s.wea_fengsu);
+               // update = s.updatetime;
+                first.update(s);
+              //  second.updateSd(s.wea_shidu);
+               // second.updateWd(s.wea_wendu);
+               // third.updateYl(s.wea_yuliang);
+               // third.updateFs(s.wea_fengsu);
             }
         });
 
         vmd.getWea().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                Log.i("TAG","天气："+s);
+                Log.i("TAG", "天气：" + s);
                 mainBinding.setWea(s);
             }
         });
         vmd.getSeven().observe(this, new Observer<SevenWea>() {
             @Override
             public void onChanged(SevenWea s) {
-                Log.i("TAG","天气："+s);
+                Log.i("TAG", "天气：" + s);
 
                 four.updateInfo(s);
             }
@@ -165,6 +182,12 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(Boolean aBoolean) {
                 fifth.update();
                 six.update();
+            }
+        });
+        vmd.getOxy().observe(this, new Observer<Oxy>() {
+            @Override
+            public void onChanged(Oxy s) {
+                oxy.updateInfo(s);
             }
         });
     }

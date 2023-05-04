@@ -1,0 +1,75 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="index"
+            type="Integer" />
+        <variable
+            name="oxy"
+            type="com.kd.appweather.beans.Oxy" />
+        <variable
+            name="info"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+     <LinearLayout
+         android:orientation="vertical"
+         android:layout_width="0px"
+         android:layout_height="match_parent"
+         android:layout_weight="1">
+
+         <ImageView
+             android:id="@+id/OxImage"
+             setOxImage="@{index}"
+             android:layout_width="match_parent"
+             android:layout_height="0px"
+             android:layout_weight="4.2"
+             android:paddingLeft="20px"
+             android:paddingTop="15px"
+             android:paddingRight="10px"
+             android:scaleType="fitXY"
+             android:src="@drawable/ox" />
+
+         <TextView
+             android:text="负氧离子"
+             android:textColor="#ff0"
+             android:textSize="25sp"
+             android:gravity="center"
+             android:layout_width="match_parent"
+             android:layout_height="0px"
+             android:layout_weight="1"/>
+     </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|bottom"
+                android:text="@{oxy.ndu}"
+                android:textColor="#fff"
+                android:textSize="40sp" />
+
+            <TextView
+                android:text="@{info}"
+                android:textColor="#ff0"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

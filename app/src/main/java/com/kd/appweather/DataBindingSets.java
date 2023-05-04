@@ -17,9 +17,9 @@ public class DataBindingSets {
     public static void setBackImage(LinearLayout view, Integer index) {
         if (index == null) return;
         if (index == 0) {
-            view.setBackgroundResource(R.drawable.bk1);
+            view.setBackgroundResource(R.drawable.bk);
         } else if (index == 1) {
-            view.setBackgroundResource(R.drawable.bk2);
+            view.setBackgroundResource(R.drawable.db4);
         } else if (index == 2) {
             view.setBackgroundResource(R.drawable.bk3);
         }
@@ -75,9 +75,20 @@ public class DataBindingSets {
 
     }
 
-
-
-
+    @BindingAdapter("setOxImage")
+    public static void setOxImage(ImageView view, int index) {
+        switch (index){
+            case 1:
+                view.setImageResource(R.drawable.ox);
+                break;
+            case 2:
+                view.setImageResource(R.drawable.ojg);
+                break;
+            case 3:
+                view.setImageResource(R.drawable.og);
+                break;
+        }
+    }
 
     @BindingAdapter("setImage")
     public static void setText(ImageView view, String text) {
