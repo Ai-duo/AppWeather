@@ -50,7 +50,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical|left"
-                android:text="中国气象"
+                android:text="瑞安气象"
                 android:textSize="@dimen/maintitle" />
 
             <TextView

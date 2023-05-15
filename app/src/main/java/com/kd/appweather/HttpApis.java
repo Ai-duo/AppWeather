@@ -7,13 +7,13 @@ import retrofit2.http.Path;
 import retrofit2.http.Url;
 
 public interface HttpApis {
-    @GET("getnewzdzhourdata/58549")
+    @GET("getnewzdzhourdata/58752")
     Call<ResponseBody> getElements();
 
-    @GET("get7dayybdata/54901")
+    @GET("get7dayybdata/58752")
     Call<ResponseBody> getSevenWea();
 
-    @GET("getdayybdata/58549")
+    @GET("getdayybdata/58752")
     Call<ResponseBody> getWeather();
 
     @GET("cloud/{index}.jpg")
@@ -21,13 +21,13 @@ public interface HttpApis {
     @GET("rad/{index}.gif")
     Call<ResponseBody> getLeiDa(@Path("index") int index);
 
-    @GET("getzdz12hourdata/58549/wea_wendu")
+    @GET("getzdz12hourdata/58752/wea_wendu")
     Call<ResponseBody> getWd();
-    @GET("getzdz12hourdata/58549/wea_shidu")
+    @GET("getzdz12hourdata/58752/wea_shidu")
     Call<ResponseBody> getSd();
-    @GET("getzdz12hourdata/58549/wea_yuliang")
+    @GET("getzdz12hourdata/58752/wea_yuliang")
     Call<ResponseBody> getYl();
-    @GET("getzdz12hourdata/58549/wea_fengsu")
+    @GET("getzdz12hourdata/58752/wea_fengsu")
     Call<ResponseBody> getFs();
 
 }
