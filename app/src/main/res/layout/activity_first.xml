@@ -165,7 +165,7 @@
                     android:layout_height="0px"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="降水"
+                    android:text="24小时降水"
                     android:textSize="@dimen/firstpagetextsize" />
 
                 <TextView
